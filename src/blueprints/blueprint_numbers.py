@@ -1,5 +1,5 @@
 from flask import Blueprint, jsonify, request
-from numbers_controller import process_number_sum
+from src.controllers.numbers_controller import process_number_sum
 
 numbers = Blueprint(name="numbers", import_name=__name__)
 

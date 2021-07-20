@@ -1,5 +1,5 @@
 from flask import Flask, request, make_response, redirect
-from blueprint_numbers import numbers
+from src.blueprints.blueprint_numbers import numbers
 
 app = Flask(__name__)
 
