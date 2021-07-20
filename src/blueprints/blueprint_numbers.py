@@ -1,8 +1,12 @@
-from flask import Blueprint, jsonify
+from flask import Blueprint, jsonify, request
+from controllers.numbers import process_number_sum
 
 numbers = Blueprint(name="numbers", import_name=__name__)
 
 @numbers.route('/sum', methods=['GET'])
 def process_sum():
-    output = {"msg": "I'm the test endpoint from blueprint_x."}
-    return jsonify(output)
+    data = request.get_json()
+    array = data['array']
+    index, sumResult, leftArray, rightArray = process_number_sum(array)
+    response = { "index": index, "sum": sumResult, "leftArray": leftArray, "rightArray": rightArray}
+    return jsonify(response)
