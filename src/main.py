@@ -1,7 +1,11 @@
 from flask import Flask, request, make_response, redirect
+from flask_cors import CORS
+
 from src.blueprints.blueprint_numbers import numbers
 
 app = Flask(__name__)
+cors =CORS(app)
+app.config['CORS_HEADERS'] = 'Content-Type'
 
 app.register_blueprint(numbers, url_prefix="/numbers")
 
