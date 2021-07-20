@@ -12,4 +12,6 @@ def index():
 @app.route('/hello')
 def hello():
     user_ip = request.cookies.get('user_ip')
-    return f'Hello world Platzi, IP => {user_ip}'
+    return f'Hello world, Your IP => {user_ip}'
+
+
